@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOOTZONE PRO X1 — VISUALIZAÇÃO 3D</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand-logo" aria-label="SCOOTZONE Página Inicial">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="28" height="28" rx="6" stroke="#38BDF8" stroke-width="2.5"/>
+                    <path d="M10 11H22L10 21H22" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">SCOOT<span>ZONE</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">← VOLTAR AO CATÁLOGO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container product-detail-layout">
+        
+        <!-- COLUNA ESQUERDA: ÁREA DE RENDERIZAÇÃO 3D -->
+        <section class="viewer-section">
+            <div id="canvas-container">
+                <div id="loading-overlay">A CARREGAR MODELO 3D...</div>
+            </div>
+            
+            <!-- Barra rápida de ângulos de câmara -->
+            <div class="camera-presets">
+                <span>VISTAS:</span>
+                <button type="button" class="btn-outline" data-view="default">PERSPETIVA</button>
+                <button type="button" class="btn-outline" data-view="front">FRENTE</button>
+                <button type="button" class="btn-outline" data-view="side">LATERAL</button>
+                <button type="button" class="btn-outline" data-view="top">TOPO</button>
+            </div>
+        </section>
+
+        <!-- COLUNA DIREITA: CONTROLOS DE INTERAÇÃO E DETALHES -->
+        <aside class="controls-section">
+            <div class="product-header">
+                <span class="tag">MODELO INTERATIVO 3D</span>
+                <h1>SCOOTZONE PRO X1</h1>
+                <p class="price-large">599,00 €</p>
+                <p class="description">
+                    CONCEBIDA PARA DESLOCAÇÕES URBANAS ÁGEIS. UTILIZA O RATO PARA RODAR (360º) E FAZER ZOOM NO MODELO 3D OU USA OS CONTROLOS ABAIXO.
+                </p>
+            </div>
+
+            <!-- Controlo 1: Mudar Cor -->
+            <div class="control-group">
+                <label>1. COR DO CHASSIS</label>
+                <div class="color-options">
+                    <button type="button" class="color-swatch active" data-color="#1e293b" style="background-color: #1e293b;" title="Preto Mate"></button>
+                    <button type="button" class="color-swatch" data-color="#dc2626" style="background-color: #dc2626;" title="Vermelho Racing"></button>
+                    <button type="button" class="color-swatch" data-color="#0284c7" style="background-color: #0284c7;" title="Azul Elétrico"></button>
+                    <button type="button" class="color-swatch" data-color="#f8fafc" style="background-color: #f8fafc;" title="Branco Pérola"></button>
+                </div>
+            </div>
+
+            <!-- Controlo 2: Animações / Estados do Produto -->
+            <div class="control-group">
+                <label>2. ESTADOS E ANIMAÇÕES</label>
+                <div class="action-buttons">
+                    <button type="button" id="btn-fold" class="btn-control">DOBRAR / DESDOBRAR</button>
+                    <button type="button" id="btn-wheels" class="btn-control">SIMULAR MOVIMENTO</button>
+                    <button type="button" id="btn-lights" class="btn-control">LIGAR / DESLIGAR FAROL</button>
+                </div>
+            </div>
+
+            <!-- Controlo 3: Ambiente / Utilização -->
+            <div class="control-group">
+                <label>3. CENÁRIO DE UTILIZAÇÃO</label>
+                <div class="action-buttons">
+                    <button type="button" id="btn-env-day" class="btn-control active">MODO DIA</button>
+                    <button type="button" id="btn-env-night" class="btn-control">MODO NOITE</button>
+                    <button type="button" id="btn-reset" class="btn-danger">REPOR ESTADO INICIAL</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn-buy">ADICIONAR AO CARRINHO</button>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>SCOOTZONE MOBILITY SYSTEMS • SISTEMAS GRÁFICOS E INTERAÇÃO (2026/2027) — ESTG / IPLEIRIA[cite: 1]</p>
+        </div>
+    </footer>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
